@@ -1,6 +1,7 @@
 Use https://readme.so/editor Editor to edit the MD file
 
-![Logo](https://omarty.net/wp-content/uploads/2023/03/cropped-omarty_logo_80h.png)
+![Logo](https://scontent.fcai19-5.fna.fbcdn.net/v/t39.30808-6/327040932_443100087932382_564701514416862552_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHo6XSoFbYByfVzBdkY0DegK-vWBc-njaUr69YFz6eNpaGBQ_JR76cbdKiarilKMws&_nc_ohc=L1EdU5YNjqsAX9Fr5lH&_nc_ht=scontent.fcai19-5.fna&oh=00_AfB4L3dz49cBdOswOSPX-LibDyZTmi4VYeHZimYy6vn3OQ&oe=647CE98E)
+
 
 # Sign-Language-Translation-API-v3
 Webservice to translate text into sign language videos after processing the text , currently it supports Arabic text only
