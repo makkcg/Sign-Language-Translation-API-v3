@@ -1,0 +1,1 @@
+INSERT INTO `accounts`(`user_id`, `name`, `email`, `phone`, `package`, `words`,  `connection_points`,`remain_words`,`expire_date`) VALUES(8,'Hassan Abou Ali','hassan@gmail.com','+201121243170','الذهبية',20000,5,20000,'2024-06-13')

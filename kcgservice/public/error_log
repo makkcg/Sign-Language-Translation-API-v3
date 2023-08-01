@@ -1,0 +1,1 @@
+[31-Jul-2023 19:59:13 America/Boise] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 16384 bytes) in /home3/kcgwebse/public_html/kcgservice/public/get_lost_verbs.php on line 10
