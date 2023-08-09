@@ -11,11 +11,8 @@ Webservice to translate text into sign language videos after processing the text
 
 
 ## API Reference
-### **Add Contacts**
-we use the following URL to Update Data from the DataBase and to specify the kind of data user want to update enter KEY api values as showed in the documentation.
-```http
-  https://plateform.omarty.net/omartyapis/Update/
-```
+### **Translate Text**
+We Use the following api to translate text into sign language.
 
 ### **Request Header**
 Each Request to the API should include the following parameters in the header of the request.
@@ -29,53 +26,79 @@ Each Request to the API should include the following parameters in the header of
 ------------------------------
 ### **Requests & Responses**
 
-#### **1- Add Contacts**
-to Add secondary contacts for user.
+#### **1- Translate Text**
+to translate arabic language text to sign language.
 
 Request should include the header parameters
 ```http
-  https://plateform.omarty.net/omartyapis/Update/
+  Link
 ```
 ##### **Request Parameters**
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `api` | `String` | **Required**. End point name|
-| `phoneNumber` | `Number` | **Optional**. New Phone Number|
-| `email` | `String` | **Optional**. New Email|
-| `longitude` | `String` | **Optional**. Device Longitude|
-| `latitude` | `String` | **Optional**. Device Latitude|
-| `blockId` | `Number` | **Required**. User Block ID|
-| `apartmentId` | `Number` | **Required**. User Apartment ID|
+| `text` | `String` | **Required**. Text user wants to translate|
+| `translatorId` | `Number` | **Optional**. Translator ID|
+| `languageId` | `Number` | **Optional**. Language ID|
+| `countryId` | `Number` | **Optional**. Country ID of the user|
+| `slangId` | `Number` | **Optional**. Users' slang ID|
+| `vocalize` | `Number` | **Optional**. Flag to vocalize the text|
+| `vedioFormatID` | `Number` | **Optional**. Vedio format that should be compatible with user device|
+| `osId` | `Number` | **Optional**. Users' Operating system|
+| `transParagraph` | `Number` | **Optional**. Flag to Translate the whole paragraph at once|
+| `stream` | `Number` | **Optional**. Flag to stream translation or to view it as vedio links|
+| `arabicGrammar` | `Number` | **Optional**. Flag to Activate arabic grammar to translate efficiently|
+| `responseType` | `String` | **Optional**. Response Type|
 
 
-#### `api`
+#### `text`
 
-- End point that will trigger Adding New Secondary Contacts for user `AddContact`.
+- Text which user wants to translate to sign language.
 
-#### `phoneNumber`
+#### `translatorId`
 
-- New Phone Number User wants to add to his contacts list.
+- Translator ID to view him translating.
 
-#### `email`
+#### `languageId`
 
-- New Email User wants to add to his contacts list
+- Language Of text, default is Arabic.
 
-#### `longitude`
+#### `countryId`
 
-- Device longitude that will be stored in logs table.
+- Users' Country ID.
 
-#### `latitude`
+#### `slangId`
 
-- Device latitude that will be stored in logs table.
+- If this key is not empty then this slang words will be added to the words translated not only pure Arabic.
 
-#### `blockId`
+#### `vocalize`
 
-- User's block ID.
+- if user didn't pass text vocalized and this flag is set greater than 0 then text will be vocalized by Arabic grammar.
 
-#### `apartmentId`
+#### `vedioFormatID`
 
-- User's apartment ID.
+- Vedio format of the translated text that should be compatible with user device.
+
+#### `osId`
+
+- Users' Operating System (Android / ios / Windows / ...).
+
+#### `transParagraph`
+
+- Flag to translate the whole paragraph by not cutting it into small sentences then translate.
+
+#### `stream`
+
+- stream translation or return vedio links.
+
+#### `arabicGrammar`
+
+- to translate sign language and show pronouns, tenses, plural and singular. 
+
+#### `responseType`
+
+- Response type (JSON / XML).
+
 
 
 #### Example 1 : Adding Email Only 
@@ -99,91 +122,67 @@ The Response is JSON object containing array of objects named `status` and `data
 {
     "status": 200,
     "data": {
-        "1": {
-            "id": "1",
-            "email": "Test.Test@Test.com"
-        }
+	"vocalizedSentence": "",
+	"unVocalizedSentence": "",
+	"numberOfWords": 32,
+        "vocalizedWords": [
+			"word": "",
+			"wordAlphabet": [
+				"alphabet":[
+					"text":" ٌب",
+					"link": "",
+					]
+				]
+			],
+	"unVocalizedWord": [
+			"word": ""
+			"wordAlphabet": [
+				"alphabet":[
+					"text":"ب",
+					"link": "",
+					]
+				]
+			],
+	"vedioLinks":[
+		"word1": [
+			"text": "يلعب",
+			"wordType": "فعل",
+			"vedioLink": ""
+			],
+
+		"word2": [
+			"text": "الولد",
+			"wordType": "اسم",
+			"vedioLink": ""
+			],
+		]
     }
 }
 ```
 
-#### Example 2 : Adding PhoneNumber Only 
-
-```javascript
-{
-	"api": "AddContact",
-	"phoneNumber": 01122334455,
-	"email" : ,
-	"longitude": '121.12221',
-	"latitude" : '20.233',
-	"blockId": 1,
-	"apartmentId": 1,
-}
-```
-
-#### Response
-The Response is JSON object containing array of objects named `status` and `data` the data object shows the body of the response Which contains all secondary contacts of this user and status shows response status.
-
-```javascript
-{
-    "status": 200,
-    "data": {
-        "1": {
-            "id": "1",
-            "email": "Test.Test@Test.com"
-        },
-        "2": {
-            "id": "1",
-            "phoneNum": "01122334455"
-        }
-    }
-}
-```
 
 
 #### ERROR Response
 The Response is JSON object containing array of objects named `status` and `message` the "message" object shows the body of the response and status shows response status.
 
 
-##### Case 1 : Insert Both Email and PhoneNumber Will return User's Socondary contacts and Error object inside the message object that says No Data Inserted.
+##### Case 1 :
 ```javascript
 {
     "status": 200,
     "message": {
-        "1": {
-            "id": "1",
-            "email": "Test.Test@Test.com"
-        },
-        "2": {
-            "id": "1",
-            "phoneNum": "01122334455"
-        },
-        "error": "No Data Inserted."
+       "Error Message."
     }
 }
 ```
 
 
-##### Case 2 : if left any required key empty.
-```javascript
-{
-    "status": 200,
-    "message": "Please enter (key) ID."
-}
-```
-
-##### Case 3 : Send in api key any other value than AddContact.
-```javascript
-{
-    "status": 404,
-    "message": "Method Update::(other value) value() does not exist"
-}
-```
 
 ## Authors
 
 This Code, Trademark, and Application is Copywrite protected by law to [Diginovia](https://diginovia.com/)
 - Mohammed Khalifa [@makkcg](https://github.com/makkcg)
+- Mohammed Waheed [@MuhammadWaheed](https://github.com/MuhammadWaheed73780)
 
 ## Links
 
