@@ -134,7 +134,7 @@ The Response is JSON object containing array of objects named `status` and `data
 			"word": "",
 			"wordAlphabet": [
 				"alphabet":[
-					"text":" ٌب",
+					"text":" يَ ",
 					"link": "",
 					]
 				]
@@ -143,7 +143,7 @@ The Response is JSON object containing array of objects named `status` and `data
 			"word": ""
 			"wordAlphabet": [
 				"alphabet":[
-					"text":"ب",
+					"text":"ي",
 					"link": "",
 					]
 				]
