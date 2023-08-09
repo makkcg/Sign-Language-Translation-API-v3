@@ -1,6 +1,6 @@
 
 
-![Logo]([https://drive.google.com/file/d/1z_xTBMAlD-3KRg0wOlr_peJlrD81J1d4/view?usp=drive_link])
+![Logo](https://drive.google.com/file/d/1z_xTBMAlD-3KRg0wOlr_peJlrD81J1d4/view?usp=drive_link)
 
 
 # Omarty Chat Websocket API Documentation
