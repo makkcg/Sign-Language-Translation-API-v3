@@ -191,5 +191,5 @@ This Code, Trademark, and Application is Copywrite protected by law to [Diginovi
 
 ## Links
 
-- [Postman](https://omarty.postman.co/workspace/Omarty-Workspace-VPS~7efc4af7-9f9e-48ce-a5b5-d127cfd455b1/overview)
+- [Postman](https://omarty.postman.co/workspace/Sing-Language-Translation-API~49fae658-a256-4914-a248-a33fd398921f/overview)
 
