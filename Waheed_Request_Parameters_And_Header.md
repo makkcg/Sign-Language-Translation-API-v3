@@ -105,13 +105,18 @@ Request should include the header parameters
 
 ```javascript
 {
-	"api": "AddContact",
-	"phoneNumber": ,
-	"email" : "Test.Test@Test.com",
-	"longitude": '121.12221',
-	"latitude" : '20.233',
-	"blockId": 1,
-	"apartmentId": 1,
+	"text": "يلعب الولد",
+	"translatorId": 1,
+	"languageId" : 1,
+	"countryId": 67,
+	"slangId" : 1,
+	"vocalize": 1,
+	"vedioFormatID": 1,
+	"osId": 1,
+	"transParagraph" : 0,
+	"stream": 0,
+	"arabicGrammar": 1,
+	"responseType": "JSON",
 }
 ```
 
