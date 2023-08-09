@@ -3,9 +3,9 @@
 ![Logo](https://drive.google.com/file/d/1z_xTBMAlD-3KRg0wOlr_peJlrD81J1d4/view?usp=sharing)
 
 
-# Omarty Chat Websocket API Documentation
+# Sign-Language-Translation-API-v3
 
-Omarty is an application for Buildings commuinities, it includes a chat module for chating between building users
+Webservice to translate text into sign language videos after processing the text , currently it supports Arabic text only
 
 
 
