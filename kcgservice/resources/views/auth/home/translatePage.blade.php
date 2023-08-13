@@ -552,7 +552,7 @@ videos=[];
                     if(words.length>0)
                     {
                       console.log("video:"+videos[vindex].replace("https://kcgwebservices.net/deafservice/","storage/"));
-                      console.log("words:"+words[0]);
+                      console.log("word:"+words[0]);
                       $("#worddiv").html(words[vindex]);
                       $('#videosToPlay').attr('src', videos[vindex].replace("https://kcgwebservices.net/deafservice/","storage/"));
                       $('#videosToPlay').load();
@@ -587,7 +587,9 @@ videos=[];
  {
 
 var currentvideo=videos[vindex].replace("https://kcgwebservices.net/deafservice/","storage/");
-console.log(currentvideo);
+console.log("vindex:"+vindex+"/"+videos.length);
+console.log("word:"+words[vindex]);
+console.log("video:"+currentvideo);
  $('#videosToPlay').attr('src',currentvideo);
  $('#videosToPlay')[0].load();
  $('#videosToPlay')[0].play();  

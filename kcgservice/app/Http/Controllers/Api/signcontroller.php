@@ -207,13 +207,13 @@ class signcontroller extends Controller
     protected function GetLetters($param,$ttype)
     {
 
-        $spath="https://kcgwebservices.net/deafservice/media/".$ttype."/letters/";
+        $spath="https://kcgwebservices.net/deafservice/media/".$ttype."/alphabet/";
        
        $varr=array();
 
        for($i=0;$i<strlen($param);  $i += 2)
        {
-        $varr[$i]=$spath.$this->GetLetterOrdinalNumber(substr($param,$i,2)).".webm";
+        array_push($varr,$spath.$this->GetLetterOrdinalNumber(substr($param,$i,2)).".webm");
        }
 
        $arr=array("word"=>$param,"matches"=>array(array("word"=>$param,"video"=>$varr)));
@@ -270,79 +270,79 @@ switch ($str)
 
                 case "ر":
 
-                    $lstr = "10"; break;
+                    $lstr = "010"; break;
 
                 case "ز":
 
-                    $lstr = "11"; break;
+                    $lstr = "011"; break;
 
                 case "س":
 
-                    $lstr = "12"; break;
+                    $lstr = "012"; break;
 
                 case "ش":
 
-                    $lstr = "13"; break;
+                    $lstr = "013"; break;
 
                 case "ص":
 
-                    $lstr = "14"; break;
+                    $lstr = "014"; break;
 
                 case "ض":
 
-                    $lstr = "15"; break;
+                    $lstr = "015"; break;
 
                 case "ط":
 
-                    $lstr = "16"; break;
+                    $lstr = "016"; break;
 
                 case "ظ":
 
-                    $lstr = "17"; break;
+                    $lstr = "017"; break;
 
                 case "ع":
 
-                    $lstr = "18"; break;
+                    $lstr = "018"; break;
 
                 case "غ":
 
-                    $lstr = "19"; break;
+                    $lstr = "019"; break;
 
                 case "ف":
 
-                    $lstr = "20"; break;
+                    $lstr = "020"; break;
 
                 case "ق":
 
-                    $lstr = "21"; break;
+                    $lstr = "021"; break;
 
                 case "ك":
 
-                    $lstr = "22"; break;
+                    $lstr = "022"; break;
 
                 case "ل":
 
-                    $lstr = "23"; break;
+                    $lstr = "023"; break;
 
                 case "م":
 
-                    $lstr = "24"; break;
+                    $lstr = "024"; break;
 
                 case "ن":
 
-                    $lstr = "25"; break;
+                    $lstr = "025"; break;
 
                 case "ه":
 
-                    $lstr = "26"; break;
+                    $lstr = "026"; break;
 
                 case "و":
 
-                    $lstr = "27"; break;
+                    $lstr = "027"; break;
 
                 case "ي":
 
-                    $lstr = "28"; break;
+                    $lstr = "028"; break;
 
                 case "إ": 
 
@@ -350,11 +350,11 @@ switch ($str)
 
                 case "آ":
 
-                    $lstr = "10"; break;
+                    $lstr = "010"; break;
 
                 case "ى":
 
-                    $lstr = "28"; break;
+                    $lstr = "028"; break;
 
                 case "ة":
 
@@ -362,15 +362,15 @@ switch ($str)
 
                 case "ئ":
 
-                    $lstr = "28"; break;
+                    $lstr = "028"; break;
 
                 case "ؤ":
 
-                    $lstr = "27"; break;
+                    $lstr = "027"; break;
 
                 case "ا":
 
-                    $lstr = "1"; break;
+                    $lstr = "01"; break;
 
                                 }
 
